@@ -1,0 +1,19 @@
+<h1>Paginator</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Área</th>
+        <th>Nome</th>
+    </tr>
+    <?php
+    foreach ($paginator as $row) { ?>
+        <tr>
+            <td><?php echo $row->getId() ?></td>
+            <td><?php echo $row->getArea()->getNome() ?></td>
+            <td><?php echo $row->getNome() ?></td>
+        </tr>
+    <?php } ?>
+</table>
+
+<?php
+echo $this->paginationControl($this->paginator, 'Sliding', 'paginator.phtml', array('route' => 'paginator')); ?>
